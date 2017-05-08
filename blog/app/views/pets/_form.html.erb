@@ -1,0 +1,31 @@
+<%= form_for([@user, @user.pets.build]) do |f| %>
+ <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </p>
+
+  <p>
+    <%= f.label :gender %><br>
+    <%= f.select(:gender, ['Dog', 'Rat', 'Cat', 'Chinchilla']) %>
+  </p>
+
+  <p>
+    <%= f.label :ptipe %><br>
+    <%= f.select(:ptipe, [['Masculino', 'm'], ['Femenino', 'f']]) %>
+  </p>
+
+  <p>
+    <%= f.label :alive %><br>
+    <%= f.check_box :alive %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

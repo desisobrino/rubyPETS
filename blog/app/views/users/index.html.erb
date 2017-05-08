@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <td><%= link_to 'Usuarios', root_path %></td>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, user_path(user) %></td>
+      <td><%= link_to 'Editar', edit_user_path(user) %></td>
+      <td><%= link_to 'Eliminar', user_path(user),
+              method: :delete,
+              data: { confirm: '¿Estás seguro?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Añadir miembro', new_user_path %>
